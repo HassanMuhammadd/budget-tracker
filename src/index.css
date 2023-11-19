@@ -1,13 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+:root {
+  --main: rgb(29, 29, 27);
+  --primary: #3d77eb;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main,
+.mainPage {
+  background-color: white;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.mainPage {
+  overflow: hidden;
+  position: relative;
+}
+.overflowControl {
+  overflow-y: scroll;
+}
+
+.closeBtn {
+  width: fit-content;
+  padding: 8px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.inputStyle {
+  border: none;
+  border-bottom: 2px solid #858888;
+  outline: none;
+  position: relative;
+  transition: 0.1s;
+}
+.inputStyle:hover,
+.inputStyle:focus {
+  border-bottom: 2px solid var(--primary);
+}
+
+.primaryText {
+  color: var(--primary);
+}
+
+.primaryBg {
+  background-color: var(--primary) !important;
+}
+.button:hover {
+  background-color: #003bb1 !important;
+  color: white !important;
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0.2rem solid var(--primary);
+  background-color: transparent;
+  border-radius: 1px;
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+input[type="radio"]:checked {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0.2rem solid var(--primary);
+  background-color: var(--primary);
+  border-radius: 1px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.appLayout {
+  height: 100vh;
+}
+.listItem {
+  background-color: red;
+}
+.sidebar {
+  box-shadow: 0 0 30px #02020244;
+  animation: color forwards 5s infinite;
+  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+}
+
+.active {
+  background-color: #003bb1;
+  color: white;
+}
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.link:hover {
+  color: var(--main);
+  background-color: #0749cc;
+}
+
+.rowText {
+  vertical-align: middle;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+
+.tableRow {
+  height: 10px;
+  cursor: pointer;
+}
+.tableRow:hover {
+  opacity: 0.5;
+}
+.summaryHeader {
+  background-color: #eff3f4;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 3px solid var(--primary);
+}
+.filterButton {
+  height: 40px;
+  background-color: #ddd !important;
+}
+
+.overlay {
+  padding: 5px;
+  border: 2px solid #0055ff44;
+  box-shadow: 0 0 10px #84a9f344, 0 0 20px #85a9f3, 0 0 100px #bccdee;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  border-radius: 20px;
+}
+.icon {
+  width: 30px;
+}
+.activeIcon {
+  filter: invert(1);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #6b94e7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #003bb1;
+}
+
+.sideText {
+  font-size: 12px;
+}
+
+.dropDownHolder {
+  position: relative;
+}
+.dropdown {
+  position: absolute !important;
+  z-index: 100;
+  background-color: #eff3f4;
+  box-shadow: 0 0 5px #b6b4b4;
+}
+.dropdownItem {
+  padding: 7px 0;
+  border-bottom: 1px solid #ddd;
+}
+.reset {
+  font-size: 10px !important;
+  background-color: #f24040 !important;
+}
+.dropdownBtn {
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+.dropdownBtn:hover {
+  background-color: #dddd;
+}
+
+.barChart {
+  height: 300px;
+  padding: 20px;
+  box-shadow: 0 0 10px #dbd9d9;
+  border: 1px solid #f2eeee;
+  border-radius: 10px;
+}
+
+.statHeader {
+  width: 50%;
+}
+@media (max-width: 930px) {
+  .statHeader {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .rowText {
+    font-size: 14px;
+  }
+  .rowBtn {
+    width: 50px;
+    font-size: 12px;
+  }
+  .closeBtn {
+    height: 25px;
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 768px) {
+  th .cond {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .mainPage,
+  .main {
+    height: auto;
+    overflow-y: scroll;
+  }
+  .overflowControl {
+    overflow-y: hidden;
+  }
+  .filterButton {
+    font-size: 12px !important;
+    line-height: 14px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  .sidebarHolder {
+    height: 100%;
+  }
+  .hideOverflow {
+    overflow-y: hidden;
+  }
 }
